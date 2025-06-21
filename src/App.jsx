@@ -23,7 +23,7 @@ function App() {
     // Maps specific paths to React components
     const routes = useRoutes([
         { path: "/", element: <ShowCreators creators={creators} /> },
-        { path: "/view", element: <ViewCreator /> },
+        { path: "/view/:id", element: <ViewCreator creators={creators} /> },
         { path: "/edit", element: <EditCreator /> },
         { path: "/new", element: <AddCreator /> }
     ]);

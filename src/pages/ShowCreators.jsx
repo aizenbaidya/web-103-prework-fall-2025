@@ -7,7 +7,8 @@ const ShowCreators = ({ creators }) => {
             <div>ShowCreators page</div>
             {creators.map((creator) => (
                 <Card
-                    key={creator.id}
+                    key={creator.id} // Only used internally by React
+                    id={creator.id}
                     name={creator.name}
                     url={creator.url}
                     description={creator.description}

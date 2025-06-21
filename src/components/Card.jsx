@@ -1,8 +1,10 @@
-const Card = ({ name, url, description, imageURL }) => {
+const Card = ({ id, name, url, description, imageURL }) => {
     return (
         <article>
             <figure>
-                <img src={imageURL} />
+                <a href={`/view/${id}`}>
+                    <img src={imageURL} />
+                </a>
             </figure>
             <div>
                 <header>{name}</header>
