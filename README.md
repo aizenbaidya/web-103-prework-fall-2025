@@ -4,7 +4,7 @@ Submitted by: **Aizen Shiratani Baidya**
 
 About this web app: **Add and view your favorite content creators!**
 
-Time spent: ~**20** hours
+Time spent: ~**10** hours
 
 ## Required Features
 
@@ -34,14 +34,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ... GIF tool here
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img src='https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=' title='Video Walkthrough' width='768px' alt='Video Walkthrough' />
 
 ## Notes
 
