@@ -20,11 +20,15 @@ function App() {
         fetchCreators();
     }, [])
 
+    const handleDeleteCreator = (deleteId) => {
+        setCreators(prevCreators => prevCreators.filter(creator => creator.id !== parseInt(deleteId)));
+    }
+
     // Maps specific paths to React components
     const routes = useRoutes([
         { path: "/", element: <ShowCreators creators={creators} /> },
         { path: "/view/:id", element: <ViewCreator creators={creators} /> },
-        { path: "/edit/:id", element: <EditCreator creators={creators} /> },
+        { path: "/edit/:id", element: <EditCreator creators={creators} handleDeleteCreator={handleDeleteCreator} /> },
         { path: "/new", element: <AddCreator /> }
     ]);
 

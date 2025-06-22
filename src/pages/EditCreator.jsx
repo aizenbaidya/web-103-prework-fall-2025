@@ -1,12 +1,24 @@
 // To update a content creator's information
 import CreatorForm from "../components/CreatorForm.jsx"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import { supabase } from "../client.js"
 
-const EditCreator = ({ creators }) => {
+const EditCreator = ({ creators, handleDeleteCreator }) => {
     const { id } = useParams();
     const creator = creators.find(c => String(c.id) === id);
+    const navigate = useNavigate();
 
     if (!creator) return <div>Loading...</div>
+
+    const handleDelete = async () => {
+        const { error } = await supabase.from('creators').delete().eq('id', id);
+        if (error) {
+            console.error(error);
+        } else {
+            handleDeleteCreator(id);
+            navigate("/");
+        }
+    }
 
     return (
         <>
@@ -21,6 +33,7 @@ const EditCreator = ({ creators }) => {
                 }}
                 isEditing={true}
             />
+            <button onClick={handleDelete}>Delete</button>
         </>
     )
 }
