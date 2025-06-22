@@ -8,6 +8,8 @@ import ViewCreator from './pages/ViewCreator.jsx'
 import EditCreator from './pages/EditCreator.jsx'
 import AddCreator from './pages/AddCreator.jsx'
 
+import Layout from "./Layout.jsx"
+
 function App() {
     const [creators, setCreators] = useState([]);
 
@@ -26,10 +28,16 @@ function App() {
 
     // Maps specific paths to React components
     const routes = useRoutes([
-        { path: "/", element: <ShowCreators creators={creators} /> },
-        { path: "/view/:id", element: <ViewCreator creators={creators} /> },
-        { path: "/edit/:id", element: <EditCreator creators={creators} handleDeleteCreator={handleDeleteCreator} /> },
-        { path: "/new", element: <AddCreator /> }
+        {
+            path: "/",
+            element: <Layout />,
+            children: [
+                { index: true, element: <ShowCreators creators={creators} /> },
+                { path: "/view/:id", element: <ViewCreator creators={creators} /> },
+                { path: "/edit/:id", element: <EditCreator creators={creators} handleDeleteCreator={handleDeleteCreator} /> },
+                { path: "/new", element: <AddCreator /> }
+            ]
+        }
     ]);
 
     return routes;
