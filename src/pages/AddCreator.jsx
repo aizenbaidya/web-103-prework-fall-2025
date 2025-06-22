@@ -3,13 +3,10 @@ import CreatorForm from "../components/CreatorForm.jsx"
 
 const AddCreator = ({ fetchCreators }) => {
     return (
-        <>
-            <div>AddCreator page</div>
-            <CreatorForm
-                isEditing={false}
-                fetchCreators={fetchCreators}
-            />
-        </>
+        <CreatorForm
+            isEditing={false}
+            fetchCreators={fetchCreators}
+        />
     )
 }
 

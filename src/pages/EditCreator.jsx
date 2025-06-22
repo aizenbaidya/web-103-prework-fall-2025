@@ -22,7 +22,6 @@ const EditCreator = ({ creators, handleDeleteCreator, fetchCreators }) => {
 
     return (
         <>
-            <div>EditCreator page</div>
             <CreatorForm
                 initialData={{
                     id: id, // ONLY for use to update the right creator's information
@@ -34,7 +33,9 @@ const EditCreator = ({ creators, handleDeleteCreator, fetchCreators }) => {
                 isEditing={true}
                 fetchCreators={fetchCreators}
             />
-            <button onClick={handleDelete}>Delete</button>
+            <div style={{ margin: "0 20px 20px 20px" }}>
+                <button onClick={handleDelete} className="pico-background-red-400" style={{ marginTop: "-16px", width: "100%" }}>Delete</button>
+            </div>
         </>
     )
 }

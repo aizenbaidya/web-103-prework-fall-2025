@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../client.js"
 
+import "../styles/CreatorForm.css"
+
 const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
     const [creatorId, setCreatorId] = useState(null);
     const [message, setMessage] = useState("");
@@ -45,16 +47,31 @@ const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
     };
 
     return (
-        <>
+        <div style={{ margin: "20px" }}>
             <form id="creatorForm" onSubmit={handleSubmit}>
-                <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-                <input name="url" placeholder="URL" value={form.url} onChange={handleChange} required />
-                <input name="description" placeholder="Description" value={form.description} onChange={handleChange} required />
-                <input name="imageURL" placeholder="Image URL" value={form.imageURL} onChange={handleChange} required />
+                <label htmlFor="name">Name</label>
+                <input name="name" placeholder="Doctor Mike" value={form.name} onChange={handleChange} required />
+
+                <label htmlFor="url">URL</label>
+                <input name="url" placeholder="https://www.youtube.com/@DoctorMike" value={form.url} onChange={handleChange} required />
+
+                <label htmlFor="description">Description</label>
+                <textarea
+                    name="description"
+                    placeholder="Mikhail Oskarovich Varshavskion, known popularly as Doctor Mike, is a Russian-born American family medicine physician, YouTuber, internet personality, philanthropist, and professional boxer."
+                    value={form.description}
+                    onChange={handleChange}
+                    rows={3}
+                    required
+                    className="my-textarea"
+                />
+
+                <label htmlFor="imageURL">Image URL</label>
+                <input name="imageURL" placeholder="https://example.com/" value={form.imageURL} onChange={handleChange} required />
             </form>
-            <button type="submit" form="creatorForm" >{isEditing ? "Update!" : "Add!"}</button>
+            <button type="submit" form="creatorForm" className="pico-background-cyan-350">{isEditing ? "Update!" : "Add!"}</button>
             <div>{message}</div>
-        </>
+        </div>
     )
 }
 
