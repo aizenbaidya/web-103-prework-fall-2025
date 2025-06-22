@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../client.js"
 
-const CreatorForm = ({ initialData, isEditing = false }) => {
+const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
     const [creatorId, setCreatorId] = useState(null);
     const [message, setMessage] = useState("");
     const [form, setForm] = useState({ name: "", url: "", description: "", imageURL: "" });
@@ -26,13 +26,21 @@ const CreatorForm = ({ initialData, isEditing = false }) => {
         e.preventDefault();
         if (isEditing) {
             const { error } = await supabase.from("creators").update(form).eq("id", creatorId);
-            if (error) setMessage(error.message);
-            else setMessage("Creator updated!");
+            if (error) {
+                setMessage(error.message);
+            } else {
+                setMessage("Creator updated!");
+                fetchCreators();
+            }
         } else {
             const { error } = await supabase.from("creators").insert([form]);
-            if (error) setMessage(error.message);
-            else setMessage("Creator added!");
-            setForm({ name: "", url: "", description: "", imageURL: "" });
+            if (error) {
+                setMessage(error.message);
+            } else {
+                setMessage("Creator added!");
+                setForm({ name: "", url: "", description: "", imageURL: "" });
+                fetchCreators();
+            }
         }
     };
 

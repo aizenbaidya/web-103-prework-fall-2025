@@ -3,7 +3,7 @@ import CreatorForm from "../components/CreatorForm.jsx"
 import { useParams, useNavigate } from "react-router-dom"
 import { supabase } from "../client.js"
 
-const EditCreator = ({ creators, handleDeleteCreator }) => {
+const EditCreator = ({ creators, handleDeleteCreator, fetchCreators }) => {
     const { id } = useParams();
     const creator = creators.find(c => String(c.id) === id);
     const navigate = useNavigate();
@@ -32,6 +32,7 @@ const EditCreator = ({ creators, handleDeleteCreator }) => {
                     imageURL: creator.imageURL
                 }}
                 isEditing={true}
+                fetchCreators={fetchCreators}
             />
             <button onClick={handleDelete}>Delete</button>
         </>

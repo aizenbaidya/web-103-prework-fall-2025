@@ -13,12 +13,13 @@ import Layout from "./Layout.jsx"
 function App() {
     const [creators, setCreators] = useState([]);
 
+    const fetchCreators = async () => {
+        const { data, error } = await supabase.from('creators').select();
+        if (error) console.error(error);
+        else setCreators(data);
+    }
+
     useEffect(() => {
-        const fetchCreators = async () => {
-            const { data, error } = await supabase.from('creators').select();
-            if (error) console.error(error);
-            else setCreators(data);
-        }
         fetchCreators();
     }, [])
 
@@ -34,8 +35,16 @@ function App() {
             children: [
                 { index: true, element: <ShowCreators creators={creators} /> },
                 { path: "/view/:id", element: <ViewCreator creators={creators} /> },
-                { path: "/edit/:id", element: <EditCreator creators={creators} handleDeleteCreator={handleDeleteCreator} /> },
-                { path: "/new", element: <AddCreator /> }
+                {
+                    path: "/edit/:id", element: (
+                        <EditCreator
+                            creators={creators}
+                            handleDeleteCreator={handleDeleteCreator}
+                            fetchCreators={fetchCreators}
+                        />
+                    )
+                },
+                { path: "/new", element: <AddCreator fetchCreators={fetchCreators} /> }
             ]
         }
     ]);

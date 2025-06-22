@@ -1,12 +1,14 @@
 // To add a new content creator
 import CreatorForm from "../components/CreatorForm.jsx"
 
-const AddCreator = () => {
-
+const AddCreator = ({ fetchCreators }) => {
     return (
         <>
             <div>AddCreator page</div>
-            <CreatorForm isEditing={false} />
+            <CreatorForm
+                isEditing={false}
+                fetchCreators={fetchCreators}
+            />
         </>
     )
 }
