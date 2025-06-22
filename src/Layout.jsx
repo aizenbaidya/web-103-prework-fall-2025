@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom"
 import Footer from "./components/Footer.jsx"
 import "./styles/Layout.css"
 
-const Layout = () => {
+const Layout = ({ ids }) => {
     return (
         <>
-            <Navbar />
+            <Navbar ids={ids} />
             <main class="pico-background-blue-600">
                 <Outlet />
             </main>

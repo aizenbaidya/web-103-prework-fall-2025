@@ -1,6 +1,6 @@
 // To view a SINGLE content creator
 import { useParams } from "react-router-dom"
-import Card from "../components/Card.jsx"
+import "../styles/ViewCreator.css"
 
 const ViewCreator = ({ creators }) => {
     const { id } = useParams();
@@ -9,18 +9,18 @@ const ViewCreator = ({ creators }) => {
     if (!creator) return <div>Loading...</div>
 
     return (
-        <>
-            <div>ViewCreator page</div>
-            <div>ID: {id}</div>
-            <Card
-                key={creator.id} // Only used internally by React
-                id={creator.id}
-                name={creator.name}
-                url={creator.url}
-                description={creator.description}
-                imageURL={creator.imageURL}
-            />
-        </>
+        <div className="view-creator-container pico-background-pumpkin-400">
+            <img src={creator.imageURL} alt="" className="view-creator-img" />
+            <div className="view-creator-info">
+                <h1 className="pico-color-slate-750">{creator.name}</h1>
+                <p className="pico-color-slate-500">{creator.description}</p>
+                <div>
+                    <i className="fa-brands fa-youtube pico-color-red-500" style={{ position: "relative", top: "1.5px" }}></i>
+                    {" "}
+                    <a href={creator.url}>{creator.url}</a>
+                </div>
+            </div>
+        </div>
     )
 }
 

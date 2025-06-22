@@ -31,7 +31,7 @@ function App() {
     const routes = useRoutes([
         {
             path: "/",
-            element: <Layout />,
+            element: <Layout ids={creators.map(creator => creator.id)} />,
             children: [
                 { index: true, element: <ShowCreators creators={creators} /> },
                 { path: "/view/:id", element: <ViewCreator creators={creators} /> },

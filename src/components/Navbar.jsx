@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom"
 import "../styles/Navbar.css"
 
-const Navbar = () => {
+const Navbar = ({ ids }) => {
+    const getRandomId = () => {
+        const randomIndex = Math.floor(Math.random() * ids.length);
+        return ids[randomIndex];
+    }
+
     return (
         <nav className="sticky-navbar" style={{ overflow: "hidden" }}>
             <ul>
@@ -12,7 +17,7 @@ const Navbar = () => {
             </ul>
             <ul>
                 <li><Link to="/new" className="nav-list-item">Add</Link></li>
-                <li><Link to="/view/123" className="nav-list-item">Random</Link></li>
+                <li><Link to={`/view/${getRandomId()}`} className="nav-list-item">Random</Link></li>
             </ul>
         </nav>
     )

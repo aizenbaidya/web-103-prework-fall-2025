@@ -1,0 +1,21 @@
+.view-creator-img {
+    width: 440px;
+    height: 440px;
+    object-fit: cover;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+.view-creator-container {
+    margin: 20px;
+    border-radius: 4px;
+    display: flex;
+    /* align-items: flex-start; */
+}
+
+.view-creator-info {
+    margin: 20px;
+    background-color: var(--pico-color-grey-200);
+    padding: 20px;
+    border-radius: 8px;
+}
