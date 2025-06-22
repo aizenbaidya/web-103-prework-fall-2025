@@ -2,7 +2,7 @@ import "../styles/Footer.css"
 
 const Footer = () => {
     return (
-        <div className="footer">Thank you for visiting CREATORVERSE! 🎥 💡 🤳 ▶️</div>
+        <div className="footer">Thanks for using CREATORVERSE! 🎥 💡 🤳 ▶️</div>
     )
 }
 

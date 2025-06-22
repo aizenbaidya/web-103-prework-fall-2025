@@ -15,7 +15,7 @@ const ViewCreator = ({ creators }) => {
                 <h1 className="pico-color-slate-750">{creator.name}</h1>
                 <p className="pico-color-slate-500">{creator.description}</p>
                 <div>
-                    <i className="fa-brands fa-youtube pico-color-red-500" style={{ position: "relative", top: "1.5px" }}></i>
+                    <i id="youtube-logo" className="fa-brands fa-youtube pico-color-red-500" style={{ position: "relative", top: "1.5px" }}></i>
                     {" "}
                     <a href={creator.url}>{creator.url}</a>
                 </div>
