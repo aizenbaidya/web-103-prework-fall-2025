@@ -6,7 +6,7 @@ const ViewCreator = ({ creators }) => {
     const { id } = useParams();
     const creator = creators.find(c => String(c.id) === id);
 
-    if (!creator) return <div>Loading...</div>
+    if (!creator) return <div aria-busy="true" style={{ marginTop: "12px" }}></div>
 
     return (
         <div className="view-creator-container pico-background-pumpkin-400">

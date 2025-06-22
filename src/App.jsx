@@ -12,12 +12,15 @@ import Layout from "./Layout.jsx"
 
 function App() {
     const [creators, setCreators] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const location = useLocation();
 
     const fetchCreators = async () => {
+        setIsLoading(true);
         const { data, error } = await supabase.from('creators').select();
         if (error) console.error(error);
         else setCreators(data);
+        setIsLoading(false);
     }
 
     useEffect(() => {
@@ -38,7 +41,7 @@ function App() {
             path: "/",
             element: <Layout ids={creators.map(creator => creator.id)} />,
             children: [
-                { index: true, element: <ShowCreators creators={creators} /> },
+                { index: true, element: <ShowCreators creators={creators} isLoading={isLoading} /> },
                 { path: "/view/:id", element: <ViewCreator creators={creators} /> },
                 {
                     path: "/edit/:id", element: (
