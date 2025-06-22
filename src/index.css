@@ -1,1 +1,4 @@
-
+#root {
+    background-color: var(--pico-color-red-550);
+    min-height: 100vh;
+}
