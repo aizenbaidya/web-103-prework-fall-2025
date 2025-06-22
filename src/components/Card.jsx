@@ -12,9 +12,9 @@ const Card = ({ id, name, url, description, imageURL }) => {
             <div className="card-content">
                 <header><b>{name}</b></header>
                 {/* {description} */}
-                <footer><a>{url}</a></footer>
-                <Link to={`/edit/${id}`}>
-                    <button style={{ marginTop: "6px" }}>Edit</button>
+                <footer><a href={url}>{url}</a></footer>
+                <Link to={`/edit/${id}`} style={{ marginTop: "auto" }}>
+                    <button><i class="fa-solid fa-pen-to-square"></i>{" "}Edit</button>
                 </Link>
             </div>
         </article>

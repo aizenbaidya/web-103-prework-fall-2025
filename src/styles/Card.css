@@ -3,6 +3,8 @@
     height: 520px;
     padding: 0;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-image {
@@ -16,4 +18,7 @@
 
 .card-content {
     margin: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }

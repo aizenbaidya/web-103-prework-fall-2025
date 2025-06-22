@@ -6,7 +6,7 @@ const ShowCreators = ({ creators }) => {
     return (
         <>
             {creators?.length === 0 && <div>No creators yet, add some!</div>}
-            <div className="creators-grid" style={{ paddingTop: "20px" }}>
+            <div className="creators-grid">
                 {creators.map((creator) => (
                     <Card
                         key={creator.id} // Only used internally by React

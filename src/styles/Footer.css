@@ -1,0 +1,6 @@
+.footer {
+    background-color: var(--pico-color-jade-450);
+    font-size: medium;
+    text-align: center;
+    padding: 8px;
+}
