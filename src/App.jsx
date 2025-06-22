@@ -1,6 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import { useRoutes } from "react-router-dom"
+import { useRoutes, useLocation } from "react-router-dom"
 import { supabase } from "./client.js"
 
 import ShowCreators from './pages/ShowCreators.jsx'
@@ -12,6 +12,7 @@ import Layout from "./Layout.jsx"
 
 function App() {
     const [creators, setCreators] = useState([]);
+    const location = useLocation();
 
     const fetchCreators = async () => {
         const { data, error } = await supabase.from('creators').select();
@@ -22,6 +23,10 @@ function App() {
     useEffect(() => {
         fetchCreators();
     }, [])
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     const handleDeleteCreator = (deleteId) => {
         setCreators(prevCreators => prevCreators.filter(creator => creator.id !== parseInt(deleteId)));

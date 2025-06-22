@@ -29,6 +29,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] You can view a random creator from the ones you've added
+* [x] Confetti effect upon successfully adding a new creator or updating an existing creator
 
 ## Video Walkthrough
 

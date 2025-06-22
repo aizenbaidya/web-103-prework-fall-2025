@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../client.js"
+import confetti from "canvas-confetti"
 
 import "../styles/CreatorForm.css"
 
 const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
     const [creatorId, setCreatorId] = useState(null);
-    const [message, setMessage] = useState("");
     const [form, setForm] = useState({ name: "", url: "", description: "", imageURL: "" });
 
     useEffect(() => {
@@ -20,6 +20,14 @@ const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
         }
     }, [initialData]);
 
+    const triggerConfetti = () => {
+        confetti({
+            particleCount: 64,
+            spread: 128,
+            origin: { y: 0.8 }
+        });
+    };
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -29,19 +37,19 @@ const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
         if (isEditing) {
             const { error } = await supabase.from("creators").update(form).eq("id", creatorId);
             if (error) {
-                setMessage(error.message);
+                console.error(error.message);
             } else {
-                setMessage("Creator updated!");
                 fetchCreators();
+                triggerConfetti();
             }
         } else {
             const { error } = await supabase.from("creators").insert([form]);
             if (error) {
-                setMessage(error.message);
+                console.error(error.message);
             } else {
-                setMessage("Creator added!");
                 setForm({ name: "", url: "", description: "", imageURL: "" });
                 fetchCreators();
+                triggerConfetti();
             }
         }
     };
@@ -70,7 +78,6 @@ const CreatorForm = ({ initialData, isEditing = false, fetchCreators }) => {
                 <input name="imageURL" placeholder="https://example.com/" value={form.imageURL} onChange={handleChange} required />
             </form>
             <button type="submit" form="creatorForm" className="pico-background-cyan-350">{isEditing ? "Update!" : "Add!"}</button>
-            <div>{message}</div>
         </div>
     )
 }
