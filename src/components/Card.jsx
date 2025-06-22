@@ -6,7 +6,16 @@ const Card = ({ id, name, url, description, imageURL }) => {
         <article className="card">
             <figure>
                 <a href={`/view/${id}`}>
-                    <img src={imageURL} className="card-image" />
+                    <img
+                        src={imageURL}
+                        className="card-image"
+                        style={{
+                            transition: "filter 0.5s ease",
+                            filter: "grayscale(1)",
+                        }}
+                        onMouseEnter={(e) => e.target.style.filter = "grayscale(0)"}
+                        onMouseLeave={(e) => e.target.style.filter = "grayscale(1)"}
+                    />
                 </a>
             </figure>
             <div className="card-content">
