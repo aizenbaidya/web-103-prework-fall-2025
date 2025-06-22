@@ -24,7 +24,7 @@ function App() {
     const routes = useRoutes([
         { path: "/", element: <ShowCreators creators={creators} /> },
         { path: "/view/:id", element: <ViewCreator creators={creators} /> },
-        { path: "/edit", element: <EditCreator /> },
+        { path: "/edit/:id", element: <EditCreator creators={creators} /> },
         { path: "/new", element: <AddCreator /> }
     ]);
 

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Card = ({ id, name, url, description, imageURL }) => {
     return (
         <article>
@@ -10,6 +12,9 @@ const Card = ({ id, name, url, description, imageURL }) => {
                 <header>{name}</header>
                 {description}
                 <footer>{url}</footer>
+                <Link to={`/edit/${id}`}>
+                    <button>Edit</button>
+                </Link>
             </div>
         </article>
     )
