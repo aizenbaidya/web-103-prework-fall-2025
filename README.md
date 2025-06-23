@@ -36,5 +36,3 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features: https://www.youtube.com/watch?v=Y6_0--RPjc4
-
-![](codepath-web-103-prework-fall-2025.mp4)
