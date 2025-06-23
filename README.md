@@ -31,14 +31,8 @@ The following **additional** features are implemented:
 * [x] You can view a random creator from the ones you've added
 * [x] Confetti effect upon successfully adding a new creator or updating an existing creator
 * [x] On the view all creators page, hover over one of the creators' grayed images (which turns into color upon hover) and click on the image to learn more about them
-* [ ] When deleting a creator, a modal pops up to confirm to delete that creator
+* [ ] (TO-DO) When deleting a creator, a modal pops up to confirm to delete that creator
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
-
-<img src='https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=' title='Video Walkthrough' width='768px' alt='Video Walkthrough' />
-
-## Notes
-
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Here's a walkthrough of implemented required features: https://www.youtube.com/watch?v=Y6_0--RPjc4
