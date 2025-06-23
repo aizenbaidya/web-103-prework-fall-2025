@@ -1,0 +1,11 @@
+.sticky-navbar {
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+    background-color: var(--pico-color-pumpkin-350);
+}
+
+.nav-list-item {
+    color: var(--pico-color-blue-500);
+    padding: 16px;
+}
