@@ -1,8 +1,8 @@
-# CodePath WEB 103 Pre-work - *CREATORVERSE*
+# CodePath WEB 103 Prework - *CREATORVERSE*
 
 Submitted by: **Aizen Shiratani Baidya**
 
-About this web app: **Add and view your favorite content creators!**
+About this web app: **An app to share your favorite creators!**
 
 Time spent: ~**10** hours
 
@@ -30,6 +30,8 @@ The following **additional** features are implemented:
 
 * [x] You can view a random creator from the ones you've added
 * [x] Confetti effect upon successfully adding a new creator or updating an existing creator
+* [x] On the view all creators page, hover over one of the creators' grayed images (which turns into color upon hover) and click on the image to learn more about them
+* [ ] When deleting a creator, a modal pops up to confirm to delete that creator
 
 ## Video Walkthrough
 
