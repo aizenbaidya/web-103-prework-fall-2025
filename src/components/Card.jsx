@@ -22,7 +22,7 @@ const Card = ({ id, name, url, imageURL }) => {
                 <header><b>{name}</b></header>
                 <footer><a href={url}>{url}</a></footer>
                 <Link to={`/edit/${id}`} style={{ marginTop: "auto" }}>
-                    <button><i class="fa-solid fa-pen-to-square"></i>{" "}Edit</button>
+                    <button><i className="fa-solid fa-pen-to-square"></i>{" "}Edit</button>
                 </Link>
             </div>
         </article>

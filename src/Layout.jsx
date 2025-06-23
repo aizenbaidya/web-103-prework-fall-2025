@@ -7,7 +7,7 @@ const Layout = ({ ids }) => {
     return (
         <>
             <Navbar ids={ids} />
-            <main class="pico-background-blue-600">
+            <main className="pico-background-blue-600">
                 <Outlet />
             </main>
             <Footer />
