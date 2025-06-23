@@ -37,4 +37,4 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://www.youtube.com/watch?v=Y6_0--RPjc4' title='Video Walkthrough' width='768px' alt='Video Walkthrough' />
+<iframe src='https://www.youtube.com/watch?v=Y6_0--RPjc4' title='Video Walkthrough' width='768px' alt='Video Walkthrough' /></iframe>
